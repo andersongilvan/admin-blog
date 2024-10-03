@@ -1,0 +1,28 @@
+.ContainerOptions {
+    box-sizing: border-box;
+    width: 320px;
+    height: 700px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    /* From https://css.glass */
+    background: rgba(117, 122, 168, 0.14);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+    border: 1px solid rgba(117, 122, 168, 0.23);
+    color: white;
+}
+
+@media screen and (min-width:1024px) {
+    .ContainerOptions {
+        width: 700px;
+        
+    }
+}
+

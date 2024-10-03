@@ -1,0 +1,18 @@
+.btn-link {
+    text-decoration: none;
+    width: 180px;
+    padding:10px 5px;
+    text-align: center;
+    border-radius: 8px;
+   margin-bottom: 20px;
+    color: aliceblue;
+    border: none;
+    background: rgb(34,34,176);
+    transition: 1.5s;
+}
+
+.btn-link:hover{
+    background-color: aliceblue;
+    color: black;
+    transform: scale(120%);
+}
