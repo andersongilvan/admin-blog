@@ -18,7 +18,7 @@ const CreationForm = ({ handleSubmit, handler, register }) => {
         <textarea type="text" {...register("content")} required />
       </div>
       <div className={style.containerInput}>
-        <label>Titulo</label>
+        <label>URL da imagem</label>
         <input type="text" {...register("image")} required />
       </div>
       <Button>enviar</Button>

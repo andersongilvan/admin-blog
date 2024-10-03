@@ -6,13 +6,13 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 15px 30px;
-    gap: 40px;
+    gap: 30px;
 }
 
 .containerInput, .containerTextArea {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .containerInput input, .containerTextArea textarea {
@@ -31,7 +31,12 @@
      gap: 20px;
     }
 
-    .containerInput input, .containerTextArea textarea {
-        padding: 20px 40px;
+    .containerInput input  {
+        padding: 8px 40px;
+    }
+
+
+    .containerTextArea textarea {
+        padding: 15px 40px;
     }
 }
