@@ -11,7 +11,9 @@
 
 @media screen and (min-width: 1024px) {
     .Container{
+        
         width: 1024px;
+        height: 80%;
         max-width: 1400px;
         display: flex;
         flex-direction: row;

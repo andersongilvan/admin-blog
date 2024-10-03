@@ -3,14 +3,14 @@ import { FaRegUser } from "react-icons/fa";
 import { FiLock } from "react-icons/fi";
 import Button from "../Button";
 
-const LoginForm = ({ handleLoginsSubmit, register, handleSubmit, err }) => {
+const LoginForm = ({ handleLoginsSubmit, register, handleSubmit}) => {
   return (
     <form onSubmit={handleSubmit(handleLoginsSubmit)} className={style.form}>
       <div className={style.containerInput}>
         <input
           type="text"
           placeholder="E-mail"
-          {...register("email", { required: "O campo é obrigatório" })}
+          {...register("email")} required
         />
         <FaRegUser className={style.user} />
       </div>
@@ -18,7 +18,7 @@ const LoginForm = ({ handleLoginsSubmit, register, handleSubmit, err }) => {
         <input
           type="password"
           placeholder="Senha"
-          {...register("password", { required: "O campo é obrigatório" })}
+          {...register("password")} required
         />
         
         <FiLock className={style.lock} />

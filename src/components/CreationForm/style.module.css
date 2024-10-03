@@ -26,7 +26,10 @@
 }
 
 @media screen and (min-width: 1024px) {
-    
+    .form {
+     
+     gap: 20px;
+    }
 
     .containerInput input, .containerTextArea textarea {
         padding: 20px 40px;

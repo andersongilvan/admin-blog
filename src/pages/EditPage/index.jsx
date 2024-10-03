@@ -55,28 +55,4 @@ const EditPage = () => {
 };
 export default EditPage;
 
-{
-  /* <form onSubmit={handleSubmit(handlerPostSubmit)} className="form">
-        <div className="container-input">
-          <label>Titulo</label>
-          <input type="text" {...register("title")} required />
-        </div>
 
-        <div className="container-input">
-          <label>Descrição</label>
-          <textarea {...register("description")} required />
-        </div>
-
-        <div className="container-input">
-          <label>Post</label>
-          <textarea {...register("content")} required />
-        </div>
-
-        <div className="container-input">
-          <label>URL da imagem</label>
-          <input type="text" {...register("image")} required />
-        </div>
-
-        <Button>Enviar</Button>
-      </form> */
-}
