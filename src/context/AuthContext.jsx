@@ -1,29 +1,58 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api.js";
 
+export const authContext = createContext();
 
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(null);
+  const [userName, setUserName] = useState(null);
+  const navigate = useNavigate();
 
-export const authContext = createContext()
+  const tokenExist = localStorage.getItem("token");
+  
 
-export const AuthProvider = ({children}) => {
-    const [token, setToken] = useState(false)
-    const navigate = useNavigate()
-    const tokenExist = localStorage.getItem("token")
-    const userName = localStorage.getItem("userName")
-    useEffect(() => {
+  useEffect(() => {
+    if (!tokenExist) {
+      navigate("/");
+    }
+  }, []);
 
-        if (tokenExist) {
-            setToken(true)
-        }
-        else {
-            
-            navigate("/")
-        }
-    }, [])
+  async function login(data) {
+    try {
+      const response = await api.post("/user/login", {
+        email: data.email,
+        password: data.password,
+      });
 
-    return (
-        <authContext.Provider value={{token, tokenExist, userName}}>
-            {children}
-        </authContext.Provider>
-    )
-}
+      const token = response.data.token;
+      const userName = response.data.userName;
+
+      // Salva no localStorage
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("userName", userName);
+
+      setToken(token);
+      setUserName(userName);
+
+      return response.data;
+    } catch (error) {
+      error.response.data;
+    }
+  }
+
+  async function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    navigate("/");
+  }
+
+  return (
+    <authContext.Provider
+      value={{ token, tokenExist, userName, login, logout }}
+    >
+      {children}
+    </authContext.Provider>
+  );
+};
