@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { createPost } from "../../services/postService.js";
 import { useContext } from "react";
 import { authContext } from "../../context/AuthContext.jsx";
+import CreationForm from "../../components/CreationForm/index.jsx";
 
 const CreatePostPage = () => {
   const navigate = useNavigate();
@@ -12,6 +13,10 @@ const CreatePostPage = () => {
   const { register, handleSubmit } = useForm();
 
   async function handlerPostSubmit(data) {
+
+    console.log("Data: ", data);
+    
+
     try {
       await createPost(data, tokenExist);
 
@@ -26,63 +31,15 @@ const CreatePostPage = () => {
     <ContainerOptions>
       <h1>Criação de posts</h1>
 
-      <form onSubmit={handleSubmit(handlerPostSubmit)} className="form">
-        <div className="container-input">
-          <label>Titulo</label>
-          <input type="text" {...register("title")} required />
-        </div>
-
-        <div className="container-input">
-        <label>Descrição</label>
-          <textarea {...register("description")} required />
-        </div>
-
-        <div className="container-input">
-        <label>Post</label>
-          <textarea {...register("content")} required />
-        </div>
-
-        <div className="container-input">
-        <label>URL da imagem</label>
-          <input type="text" {...register("image")} required />
-        </div>
-
-        <Button>Enviar</Button>
-      </form>
+    <CreationForm 
+      handleSubmit={handleSubmit}
+      register={register}
+      handler={handlerPostSubmit}
+    />
+    
     </ContainerOptions>
   );
 };
 
 export default CreatePostPage;
 
-/*
-const postsSchema = new mongoose.Schema(
-  {
-    id: { type: mongoose.Schema.Types.ObjectId },
-    titulo: { type: String, required: [true, "O campo TITULO é obrigatório"] },
-    descricao: {
-      type: String,
-      required: [true, "O campo DESCRIÇÃO é obrigatória"],
-    },
-    conteudo: {
-      type: String,
-      required: [true, "O campo CONTEÚDO é obrigatória"],
-    },
-    thumb: { type: String, required: [true, "O campo THUMB é obrigatória"] },
-  },
-  { versionKey: false, timestamps: true }
-);
-
-const post = mongoose.model("posts", postsSchema);
-
-export default post;
-
-*/
-
-// const response = await api.post("/posts", {
-//   titulo: data.title,
-//   descricao: data.description,
-//   conteudo: data.content,         thumb: data.image
-//  }, {headers: {Authorization: `Bearer ${tokenExist}`}})
-//   alert("Post criado com sucesso!")
-//  navigate("/posts")

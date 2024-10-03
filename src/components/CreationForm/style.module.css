@@ -1,0 +1,34 @@
+.form {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 30px;
+    gap: 40px;
+}
+
+.containerInput, .containerTextArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.containerInput input, .containerTextArea textarea {
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+}
+
+@media screen and (min-width: 1024px) {
+    
+
+    .containerInput input, .containerTextArea textarea {
+        padding: 20px 40px;
+    }
+}

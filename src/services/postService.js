@@ -2,6 +2,9 @@ import { MdSportsEsports } from "react-icons/md";
 import api from "./api";
 
 export async function createPost(data, token) {
+
+  console.log("funcao createPost: ", data);
+
   try {
     const response = await api.post(
       "/posts",

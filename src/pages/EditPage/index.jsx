@@ -1,12 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { authContext } from "../../context/AuthContext";
-
 import { useContext, useEffect, useState } from "react";
-
 import { postByID, updatePost } from "../../services/postService";
 import Container from "../../components/Container";
 import { useForm } from "react-hook-form";
-import Button from "../../components/Button";
+import CreationForm from "../../components/CreationForm";
 
 const EditPage = () => {
   const navigate = useNavigate();
@@ -47,7 +45,18 @@ const EditPage = () => {
   return (
     <Container>
       <h1>Edição de posts</h1>
-      <form onSubmit={handleSubmit(handlerPostSubmit)} className="form">
+      <CreationForm
+        register={register}
+        handleSubmit={handleSubmit}
+        handler={handlerPostSubmit}
+      />
+    </Container>
+  );
+};
+export default EditPage;
+
+{
+  /* <form onSubmit={handleSubmit(handlerPostSubmit)} className="form">
         <div className="container-input">
           <label>Titulo</label>
           <input type="text" {...register("title")} required />
@@ -69,8 +78,5 @@ const EditPage = () => {
         </div>
 
         <Button>Enviar</Button>
-      </form>
-    </Container>
-  );
-};
-export default EditPage;
+      </form> */
+}
