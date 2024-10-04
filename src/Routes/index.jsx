@@ -8,6 +8,7 @@ import PagePost from "../pages/PagePost";
 import EditPage from "../pages/EditPage";
 import CreatePage from "../pages/CreatePage";
 import ProjectPage from "../pages/PageProject";
+import EditProjectPage from "../pages/EditProjectPage";
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
             <Route path="/edit-page/:id" element={<EditPage />} />
             <Route path="/posts" element={<PagePost />} />
             <Route path="/projects" element={<ProjectPage />} />
+            <Route path="/edit-project/:id" element={<EditProjectPage />} />
           </Route>
         </Routes>
       </AuthProvider>

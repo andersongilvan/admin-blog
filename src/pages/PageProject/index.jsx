@@ -16,7 +16,7 @@ const ProjectPage = () => {
       const response = await get(tokenExist);
       setLoad(false);
       setProjects(response);
-      console.log("response: ", response);
+     // console.log("response: ", response);
     } catch (error) {
       alert(error);
     }
@@ -42,6 +42,11 @@ const ProjectPage = () => {
     }
   }
 
+   function edit(projectID) {
+   // console.log("id post: ", projectID);
+    navigate(`/edit-project/${projectID}`)
+  }
+
   return (
     <Container>
       {load ? (
@@ -52,6 +57,7 @@ const ProjectPage = () => {
             deleteProject={deleteProject}
             key={project._id}
             project={project}
+            edit={edit}
           />
         ))
       ) : (

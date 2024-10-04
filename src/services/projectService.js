@@ -35,6 +35,21 @@ export async function get(token) {
   }
 }
 
+export async function getByID(id, token) {
+  try {
+    const response = await api.get(`/projects/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}
+        `,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log("ERRO: ", error);
+    throw error;
+  }
+}
+
 export async function remove(id, token) {
   try {
     const response = await api.delete(`/projects/${id}`, {
@@ -43,6 +58,26 @@ export async function remove(id, token) {
     return response;
   } catch (error) {
     throw error;
+  }
+}
+
+export async function update(data, id, token) {
+  try {
+    const response = await api.put(
+      `/projects/${id}`,
+      {
+        titulo: data.title,
+        descricao: data.description,
+        link: data.link,
+        imagem: data.image,
+      },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    return response.data
+  } catch (error) {
+    console.log("ERRO: ", error);
+    throw error;
+    
   }
 }
 
