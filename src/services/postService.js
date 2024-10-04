@@ -1,4 +1,4 @@
-import { MdSportsEsports } from "react-icons/md";
+
 import api from "./api";
 
 export async function createPost(data, token) {

@@ -11,9 +11,9 @@ const DashboardPage = () => {
   return (
     <ContainerOptions>
       <ButtonLink url={"/posts"}>POSTS</ButtonLink>
-      <ButtonLink url={"/create-post"}>CRIAR UM POST</ButtonLink>
+      <ButtonLink url={"/create/post"}>CRIAR UM POST</ButtonLink>
       <ButtonLink url={"/projects"}>PROJETOS</ButtonLink>
-      <ButtonLink url={"/projects/create"}>CRIAR UM PROJETO</ButtonLink>
+      <ButtonLink url={"/create/project"}>CRIAR UM PROJETO</ButtonLink>
       <LogoutButton logout={logout}>Sair</LogoutButton>
     </ContainerOptions>
   );

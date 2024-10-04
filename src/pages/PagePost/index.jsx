@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import CardPost from "../../components/CardPost";
-import api from "../../services/api";
+
 import { authContext } from "../../context/AuthContext";
 import Container from "../../components/Container";
 import ButtonLink from "../../components/ButtonLink";

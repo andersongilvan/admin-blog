@@ -1,0 +1,75 @@
+.CardPost {
+    width: 370px;
+    height: 650px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    color: white;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+
+    background: rgb(172,172,184);
+background: linear-gradient(90deg, rgba(172,172,184,1) 0%, rgba(39,41,46,1) 100%);
+}
+
+.CardPost header {
+    width: 100%;
+   height: 300px;
+    padding: 10px 15px;
+    border-radius: 8px;
+   
+    
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.body {
+    width: 100%;
+    
+    padding: 10px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-around;
+    border-radius: 8px;
+    
+} 
+.CardPost footer {
+    display: flex;
+    padding: 10px 15px;
+   justify-content: space-around;
+}
+
+.containerIcons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    transition: 1s;
+}
+
+.icon:hover {
+    transform: scale(130%);
+    color: red;
+}
+
+@media screen and (min-width:1024px) {
+    .CardPost {
+        width: 460px;
+        padding: 20px 30px;
+    }
+
+    
+}
